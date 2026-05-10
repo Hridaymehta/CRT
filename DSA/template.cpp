@@ -40,10 +40,27 @@ vi get_prefix_sum(const vi &v) {
 	return prefix_sum;
 }
 
+static int largest2(vi &v) {
+	int n = v.size();
+	int largest = INT_MIN;
+	int largest2 = INT_MIN;
+
+	forn(i, n) {
+		if (v[i] > largest) {
+			largest2 = largest;
+			largest = v[i];
+		} else if (v[i] > largest2 && v[i] != largest) {
+			largest2 = v[i];
+		}
+	}
+
+	return largest2;
+}
+
 static void solve() {
 	vi v = input_vi();
-	vi ans = get_prefix_sum(v);
-	print_vi(ans);
+	int ans = largest2(v);
+	cout << ans << endl;
 }
 
 int main() {
