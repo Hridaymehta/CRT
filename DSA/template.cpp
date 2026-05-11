@@ -68,9 +68,16 @@ static int largest2(vi &v) {
 }
 
 static void solve() {
-	vi v = input_vi();
+	/*vi v = input_vi();
 	vi ans = get_suffix_sum(v);
-	print_vi(ans);
+	print_vi(ans);*/
+
+	cout << "Iterators: ";
+	vi v = {1,2,3,4,5};
+	vi::iterator itr;
+	for (itr = v.begin(); itr != v.end(); itr++) {
+		cout << *itr << " ";
+	}
 }
 
 int main() {
