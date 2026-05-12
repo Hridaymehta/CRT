@@ -35,9 +35,9 @@ static void print_map(mi& plus1) {
 		cout << p.first << "\t" << p.second << endl;
 	}
 
-/*	for (auto [key, value] : plus1) {
-		cout << key << "\t" << value << endl;
-	}*/
+	/*	for (auto [key, value] : plus1) {
+			cout << key << "\t" << value << endl;
+		}*/
 }
 
 static void print_crush_map(map<string, vector<string>>& crush_map) {
@@ -55,8 +55,8 @@ static void map_populate(map<string, vector<string>>& crush_map) {
 	crush_map["Divyam"] = { "Jivesh", "Priyanshi", "Osheen", "Rishita", "Saurabh" };
 	crush_map["Ronak"] = { "Divyam","Rishita" };
 	crush_map["Ayush"] = { "Osheen", "Saurabh" };
-	crush_map["Tanishq"] = {"Rishita"};
-	crush_map["Anushka"] = {"Jivesh", "Saurabh" };
+	crush_map["Tanishq"] = { "Rishita" };
+	crush_map["Anushka"] = { "Jivesh", "Saurabh" };
 }
 
 static void distinct_count(vector<int> arr) {
@@ -83,6 +83,7 @@ int main() {
 	map<string, vector<string>> crush_map;
 	map_populate(crush_map);
 	print_crush_map(crush_map);
-	distinct_count({ 1,2,0,1,0,2 , 3 , 5});
+	cout << endl;
+	distinct_count({ 1,2,0,1,0,2 , 3 , 5 });
 	return 0;
 }
