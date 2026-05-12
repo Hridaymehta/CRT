@@ -72,16 +72,47 @@ static int duplicates(vector <int>& v) {
 	return d + 1;
 }
 
+static bool is_anagram2(string& s1, string& s2) {
+	if (s1.size() != s2.size()) {
+		return false;
+	}
+	int count[26] = {0};
+	for (int i = 0; i < s1.size(); i++) {
+		count[s1[i] - 'a']++;
+		count[s2[i] - 'a']--;
+	}
+	for (int i = 0; i < 26; i++) {
+		if (count[i] != 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+static bool is_anagram(string& s1, string& s2) {
+	if (s1.size() != s2.size()) {
+		return false;
+	}
+	sort(s1.begin(), s1.end());
+	sort(s2.begin(), s2.end());
+	return s1 == s2;
+}
+
 static void solve() {
 	string s;
 	getline(cin, s);
 	//string_traversal(s);
 	cout << reverse_string(s);
 
+	string s1 = "listen", s2 = "silent";
+
 	remove_duplicates_in_array();
 
 	vector<int> v = { 0,0,1,1,1,2,2,3,3,4 };
 	cout << "Number of unique elements: " << duplicates(v) << endl;
+
+	cout << "Is " << s1 << " an anagram of " << s2 << "? " << (is_anagram(s1, s2) ? "True" : "False") << endl;
+	cout << "Is " << s1 << " an anagram of " << s2 << "? " << (is_anagram2(s1, s2) ? "True" : "False") << endl;
 
 	/*searching_in_string(s);
 	fun_function();*/
