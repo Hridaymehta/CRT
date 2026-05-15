@@ -60,14 +60,46 @@ bool LinkedList::search(int target) const {
 }
 
 void LinkedList::deleteNode(int pos) {
+    if (!head) {
+		return;
+    }
 
+    if (pos < 1) {
+		return;
+    }
+
+	int  _length = length();
+
+	if (pos > _length) {
+		return;
+	}
+
+	if (pos == 1) {
+		Node* temp = head;
+		head = head->next;
+		delete temp;
+		return;
+	}
+    struct Node* curr = head;
+	for (int i = 0; i < pos - 2; i++) {
+		curr = curr->next;
+	}
+	Node* temp = curr->next;
+	curr->next = curr->next->next;
+	delete temp;
 }
 
 int main() {
     LinkedList list;
-    for (int i = 1; i <= 5; i++) {
+    for (int i = 1; i <= 8; i++) {
         list.inserNodeTail(i);
     }
+	list.deleteNode(3);
+    list.inserNodeTail(9);
+    list.deleteNode(1);
+	list.deleteNode(0);
+	list.deleteNode(8);
+	list.deleteNode(7);
     list.print();
     return 0;
 }
