@@ -38,8 +38,6 @@ static int climbStairsSpaceOptimized(int n) {
 	return b;
 }
 
-// Leetcode 198. House Robber
-
 static int rob(vector<int>& nums) {
 	int n = nums.size();
 	int rob1 = 0, rob2 = 0;
