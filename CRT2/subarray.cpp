@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 static int prefix(int arr[], int n) {
@@ -14,6 +15,17 @@ static int prefix(int arr[], int n) {
 	}*/
 	return prefix_sum[n];
 }
+
+class NumArray {
+public:
+	NumArray(vector<int>& nums) {
+
+	}
+
+	int sumRange(int left, int right) {
+		return 0;
+	}
+};
 
 int main() {
 	const int n = 3;
